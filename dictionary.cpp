@@ -25,7 +25,9 @@ void dictionary::insert(string word) {
     if(dict.find(word) == dict.end()) {
         string definition;
         cout << "definition: ";
-        cin >> definition;
+        cin.clear();
+        cin.ignore();
+        getline(cin,definition);
         ofstream ofstream1;
         ofstream1.open("..//dictionary.txt", ios_base::app);
         dict.insert(pair<string, string>(word, definition));
